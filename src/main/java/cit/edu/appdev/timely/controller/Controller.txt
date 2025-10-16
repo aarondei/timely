@@ -1,0 +1,20 @@
+@RestController
+@RequestMapping("api/passenger")
+public class PassengerController {
+
+    @Autowired
+    PassengerService pserv;
+
+
+    // CREATE of CRUD
+    @PostMapping("/postPassengerRecord")
+    public PassengerEntity postPassengerRecord(@RequestBody PassengerEntity passenger) {
+        return pserv.postPassengerRecord(passenger);
+    }
+
+    // READ of CRUD
+    @GetMapping("/getAllPassengers")
+    public List<PassengerEntity> getAllPassengers() {
+        return pserv.getAllPassengers();
+    }
+}

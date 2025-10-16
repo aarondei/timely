@@ -1,0 +1,22 @@
+@Service
+public class PassengerService {
+
+    @Autowired
+    PassengerRepository prepo;
+
+
+    // constructor
+    public PassengerService() {
+        super();
+    }
+
+    // CREATE of CRUD
+    public PassengerEntity postPassengerRecord(PassengerEntity passenger) {
+        return prepo.save(passenger);
+    }
+
+    // READ of CRUD
+    public List<PassengerEntity> getAllPassengers() {
+        return prepo.findAll();
+    }
+}

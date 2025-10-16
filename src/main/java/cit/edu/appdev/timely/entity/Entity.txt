@@ -1,0 +1,50 @@
+@Entity
+public class PassengerEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String firstname;
+    private String lastname;
+    private String bdate;
+
+    
+    // constructor
+    public PassengerEntity() {
+        super();
+    }
+    public PassengerEntity(int id, String firstname, String lastname, String bdate) {
+        super();
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.bdate = bdate;
+    }
+
+    // getters & setters
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getFirstname() {
+        return firstname;
+    }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    public String getLastname() {
+        return lastname;
+    }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+    public String getBdate() {
+        return bdate;
+    }
+    public void setBdate(String bdate) {
+        this.bdate = bdate;
+    }
+}
