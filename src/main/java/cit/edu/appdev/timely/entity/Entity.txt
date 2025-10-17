@@ -1,4 +1,5 @@
 @Entity
+@Table(name = "tbl_entity")
 public class PassengerEntity {
 
     @Id
