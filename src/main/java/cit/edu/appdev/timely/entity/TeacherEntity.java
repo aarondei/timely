@@ -1,11 +1,12 @@
 package cit.edu.appdev.timely.entity;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class TeacherEntity{
+public class TeacherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
@@ -14,9 +15,6 @@ public class TeacherEntity{
     private String lastname;
     private String email;
 
-
-    
-
     public TeacherEntity(int id, String firstname, String lastname, String email) {
         this.id = id;
         this.firstname = firstname;
@@ -24,7 +22,7 @@ public class TeacherEntity{
         this.email = email;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
@@ -54,6 +52,6 @@ public class TeacherEntity{
 
     public void setEmail(String email) {
         this.email = email;
-    }   
+    }
 
 }

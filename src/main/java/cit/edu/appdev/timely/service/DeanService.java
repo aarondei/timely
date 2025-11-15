@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cit.edu.appdev.timely.entity.DeanEntity;
+import cit.edu.appdev.timely.entity.UserEntity;
 import cit.edu.appdev.timely.repository.DeanRepository;
 
 @Service
@@ -13,27 +14,26 @@ public class DeanService {
     @Autowired
     DeanRepository dean_repository;
 
-    public DeanEntity insertDean(DeanEntity dean){
+    public DeanEntity insertDean(DeanEntity dean) {
         return dean_repository.save(dean);
     }
 
-    public List<DeanEntity> getAllDean(){
+    public List<DeanEntity> getAllDean() {
         return dean_repository.findAll();
     }
 
-    public DeanEntity updateDean(int id, DeanEntity updatedDean){
+    public DeanEntity updateDean(int id, DeanEntity updatedDean) {
         DeanEntity existingDean = dean_repository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Dean not found with id: " + id));
+                .orElseThrow(() -> new RuntimeException("Dean not found with id: " + id));
 
-        existingDean.setFirstname(updatedDean.getFirstname());
-        existingDean.setLastname(updatedDean.getLastname());
-        existingDean.setEmail(updatedDean.getEmail());
+        existingDean.setDepartment(updatedDean.getDepartment());
+        dean_repository.save(existingDean);
 
         return dean_repository.save(existingDean);
     }
 
-    public String deleteDean(int id){
-        if(!dean_repository.existsById(id)){
+    public String deleteDean(int id) {
+        if (!dean_repository.existsById(id)) {
             throw new RuntimeException("Dean not found with id: " + id);
         }
 

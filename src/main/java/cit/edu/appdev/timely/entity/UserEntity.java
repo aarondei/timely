@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,18 +21,22 @@ public class UserEntity {
     private String password;
     private String email;
 
-    public UserEntity(String firstname, String lastname, String username, String password, String email){
+    @OneToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
+
+    public UserEntity(String firstname, String lastname, String username, String password, String email, Role role) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.role = role;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
-
 
     public String getFirstname() {
         return firstname;
@@ -70,6 +76,14 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
 }
