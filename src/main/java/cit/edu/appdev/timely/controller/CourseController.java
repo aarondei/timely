@@ -37,7 +37,7 @@ public class CourseController {
         return course_service.updateCourse(id, updatedCourse);
     }
 
-    @DeleteMapping("deleteCourse/{id}")
+    @DeleteMapping("/deleteCourse/{id}")
     public String deleteCourse(@PathVariable int id){
         return course_service.deleteCourse(id);
     }

@@ -15,6 +15,8 @@ public class TeacherEntity {
     private String lastname;
     private String email;
 
+    public TeacherEntity() {}
+
     public TeacherEntity(int id, String firstname, String lastname, String email) {
         this.id = id;
         this.firstname = firstname;

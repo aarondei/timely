@@ -36,7 +36,7 @@ public class DeanController {
         return dean_service.updateDean(id, updatedDean);
     }
 
-    @DeleteMapping("deleteDean/{id}")
+    @DeleteMapping("/deleteDean/{id}")
     public String deleteDean(@PathVariable int id){
         return dean_service.deleteDean(id);
     }

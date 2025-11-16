@@ -51,6 +51,6 @@ public class ScheduleService {
         }
 
         sched_repository.deleteById(id);
-        return "Schedule with ID" + id + "has been deleted successfully";
+        return "Schedule with ID" + id + " has been deleted successfully";
     }
 }

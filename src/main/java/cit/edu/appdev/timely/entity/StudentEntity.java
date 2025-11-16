@@ -7,6 +7,10 @@ public class StudentEntity extends Role {
 
     private String program;
 
+    public StudentEntity() {
+        super("student");
+    }
+
     public StudentEntity(String firstname, String lastname, String username, String password, String email,
             String program) {
         this.program = program;

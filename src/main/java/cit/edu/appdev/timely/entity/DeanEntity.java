@@ -7,6 +7,10 @@ public class DeanEntity extends Role {
 
     private String department;
 
+    public DeanEntity() {
+        super("dean");
+    }
+
     public DeanEntity(String firstname, String lastname, String username, String password, String email,
             String department) {
         this.department = department;

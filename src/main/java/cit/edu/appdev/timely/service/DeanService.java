@@ -38,6 +38,6 @@ public class DeanService {
         }
 
         dean_repository.deleteById(id);
-        return "Dean with ID" + id + "has been deleted successfully";
+        return "Dean with ID" + id + " has been deleted successfully";
     }
 }
