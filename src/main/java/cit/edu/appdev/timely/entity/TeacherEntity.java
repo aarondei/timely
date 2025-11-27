@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tbl_teacher")
 public class TeacherEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +17,8 @@ public class TeacherEntity {
     private String lastname;
     private String email;
 
-    public TeacherEntity() {}
+    public TeacherEntity() {
+    }
 
     public TeacherEntity(int id, String firstname, String lastname, String email) {
         this.id = id;

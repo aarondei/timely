@@ -11,20 +11,20 @@ public class UserService {
     @Autowired
     UserRepository user_repository;
 
-    //C - create or insert user in tbluser
-    public UserEntity insertStudent(UserEntity student){
+    // C - create or insert user in tbluser
+    public UserEntity insertUser(UserEntity student) {
         return user_repository.save(student);
     }
 
-    //R - read all records in tbluser
-    public List<UserEntity> getAllStudents(){
+    // R - read all records in tbluser
+    public List<UserEntity> getAllUser() {
         return user_repository.findAll();
     }
 
-    //U - update existing user details
-    public UserEntity updateUser(int id, UserEntity updatedUser){
+    // U - update existing user details
+    public UserEntity updateUser(int id, UserEntity updatedUser) {
         UserEntity existingUser = user_repository.findById(id)
-        .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
         existingUser.setFirstname(updatedUser.getFirstname());
         existingUser.setLastname(updatedUser.getLastname());
@@ -35,15 +35,13 @@ public class UserService {
         return user_repository.save(existingUser);
     }
 
-    //D - delete user
-    public String deleteUser(int id){
-        if(!user_repository.existsById(id)){
+    // D - delete user
+    public String deleteUser(int id) {
+        if (!user_repository.existsById(id)) {
             throw new RuntimeException("User not found with id: " + id);
         }
 
         user_repository.deleteById(id);
-        return "User with ID" + id + "has been deleted successfully";
+        return "User with ID" + id + " has been deleted successfully";
     }
 }
-
-

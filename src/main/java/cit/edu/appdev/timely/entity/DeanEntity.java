@@ -1,14 +1,28 @@
 package cit.edu.appdev.timely.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
-public class DeanEntity extends Role {
+@Table(name = "tbl_dean")
+public class DeanEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
 
     private String department;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
     public DeanEntity() {
-        super("dean");
     }
 
     public DeanEntity(String firstname, String lastname, String username, String password, String email,
@@ -22,5 +36,13 @@ public class DeanEntity extends Role {
 
     public String getDepartment() {
         return department;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }

@@ -1,12 +1,9 @@
 package cit.edu.appdev.timely.entity;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,14 +18,12 @@ public class UserEntity {
     private String username;
     private String password;
     private String email;
+    private String role;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role_id")
-    private Role role;
+    public UserEntity() {
+    }
 
-    public UserEntity() {}
-
-    public UserEntity(String firstname, String lastname, String username, String password, String email, Role role) {
+    public UserEntity(String firstname, String lastname, String username, String password, String email, String role) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.username = username;
@@ -81,11 +76,11 @@ public class UserEntity {
         this.email = email;
     }
 
-    public Role getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(String role) {
         this.role = role;
     }
 

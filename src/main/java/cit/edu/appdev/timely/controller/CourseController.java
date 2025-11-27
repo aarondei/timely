@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cit.edu.appdev.timely.entity.CourseEntity;
-import cit.edu.appdev.timely.entity.ScheduleEntity;
 import cit.edu.appdev.timely.service.CourseService;
 
 @RestController
@@ -33,14 +32,12 @@ public class CourseController {
     }
 
     @PutMapping("/updateCourse/{id}")
-    public CourseEntity updateCourse(@PathVariable int id, @RequestBody CourseEntity updatedCourse){
+    public CourseEntity updateCourse(@PathVariable int id, @RequestBody CourseEntity updatedCourse) {
         return course_service.updateCourse(id, updatedCourse);
     }
 
     @DeleteMapping("/deleteCourse/{id}")
-    public String deleteCourse(@PathVariable int id){
+    public String deleteCourse(@PathVariable int id) {
         return course_service.deleteCourse(id);
     }
 }
-
-

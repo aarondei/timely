@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cit.edu.appdev.timely.entity.DeanEntity;
-import cit.edu.appdev.timely.entity.UserEntity;
 import cit.edu.appdev.timely.repository.DeanRepository;
 
 @Service

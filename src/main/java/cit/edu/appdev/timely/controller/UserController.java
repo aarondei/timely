@@ -22,22 +22,22 @@ public class UserController {
     UserService user_service;
 
     @PostMapping("/insertUser")
-    public UserEntity insertStudent(@RequestBody UserEntity student){
-        return user_service.insertStudent(student);
+    public UserEntity insertStudent(@RequestBody UserEntity student) {
+        return user_service.insertUser(student);
     }
 
     @GetMapping("/getAllUser")
-    public List<UserEntity> getAllStudents(){
-        return user_service.getAllStudents();
+    public List<UserEntity> getAllUser() {
+        return user_service.getAllUser();
     }
 
     @PutMapping("/updateUser/{id}")
-    public UserEntity updateUser(@PathVariable int id, @RequestBody UserEntity updatedUser){
+    public UserEntity updateUser(@PathVariable int id, @RequestBody UserEntity updatedUser) {
         return user_service.updateUser(id, updatedUser);
     }
 
     @DeleteMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable int id){
+    public String deleteUser(@PathVariable int id) {
         return user_service.deleteUser(id);
     }
 }
