@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import cit.edu.appdev.timely.entity.UserEntity;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Integer>{
-
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+    UserEntity findByEmail(String email);
 }

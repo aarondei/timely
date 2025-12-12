@@ -1,5 +1,6 @@
 package cit.edu.appdev.timely.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,9 +16,10 @@ public class UserEntity {
 
     private String firstname;
     private String lastname;
+    @Column(unique = true, nullable = false)
+    private String email;
     private String username;
     private String password;
-    private String email;
     private String role;
 
     public UserEntity() {
@@ -30,6 +32,10 @@ public class UserEntity {
         this.password = password;
         this.email = email;
         this.role = role;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getId() {
