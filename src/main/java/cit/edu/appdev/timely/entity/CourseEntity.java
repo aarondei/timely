@@ -22,6 +22,37 @@ public class CourseEntity {
     @Column(name = "units")
     private int units;
 
+    @Column(name = "yearOffered")
+    private int yearOffered;
+    @Column(name = "semester")
+    private int semester;
+    @Column(name = "program")
+    private String program;
+
+    public int getYearOffered() {
+        return yearOffered;
+    }
+
+    public void setYearOffered(int yearOffered) {
+        this.yearOffered = yearOffered;
+    }
+
+    public int getSemester() {
+        return semester;
+    }
+
+    public void setSemester(int semester) {
+        this.semester = semester;
+    }
+
+    public String getProgram() {
+        return program;
+    }
+
+    public void setProgram(String program) {
+        this.program = program;
+    }
+
     public CourseEntity() {}
 
     public CourseEntity(String courseCode, String courseDescription, int units){
