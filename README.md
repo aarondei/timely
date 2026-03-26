@@ -9,3 +9,5 @@ A backend system for **class schedule management** built with Spring Boot and My
 - Supports future integration with front-end applications.
 
 **Technologies:** Spring Boot, MYSQL
+
+**AppDev F2 Project**
