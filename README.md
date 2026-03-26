@@ -1,6 +1,6 @@
 # Timely
 
-A backend system for **class schedule management** built with Spring Boot and MySQL.
+A purely backend system for **class schedule management** built with Spring Boot and MySQL. API endpoints were tested through Postman.
 
 **Features:**
 - Managed database operations using **MVC architecture**.  
